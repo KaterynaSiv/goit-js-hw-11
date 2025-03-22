@@ -4,20 +4,38 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
+    <title>Image search</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <load src="./partials/header.html" icon-path="img/sprite.svg#logo" />
-
     <main>
-      <!-- Loads the specified .html file -->
-      <load src="./partials/vite-promo.html" />
-      <load src="./partials/badges.html" />
+      <h1 class="main-title">Image search</h1>
+      <div class="wrapper">
+        <!-- Форма пошуку -->
+        <form class="form">
+          <label>
+            <input
+              type="text"
+              name="search-text"
+              placeholder="Search images..."
+              autocomplete="off"
+            />
+          </label>
+          <button type="submit">Search</button>
+        </form>
+
+        <!-- Лоадер -->
+        <div class="loader hidden"></div>
+      </div>
+
+      <!-- Контейнер для картинки -->
+      <div class="img-container">
+        <ul class="gallery">
+          <li class="gallery-item"></li>
+        </ul>
+      </div>
     </main>
 
-    <load src="./partials/footer.html" />
-
-    <script type="module" src="./main.js"></script>
+    <script type="module" src="./main.js" defer></script>
   </body>
 </html>
