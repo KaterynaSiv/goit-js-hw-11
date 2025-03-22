@@ -107,6 +107,10 @@ button:active {
   border: 1px solid #808080;
   transition: transform 0.3s ease;
   cursor: pointer;
+
+  display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .gallery_item:hover {
@@ -126,17 +130,22 @@ button:active {
 .gallery_info {
   padding: 4px 25px;
   background: #fff;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .gallery_stats {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 24px;
   color: #2e2f42;
   font-weight: 600;
   font-size: 12px;
   line-height: 133%;
   letter-spacing: 0.04em;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .gallery_stats p {
@@ -162,6 +171,34 @@ button:active {
   font-weight: 600;
   /* Заголовки статистики жирним шрифтом */
   line-height: 133%;
+}
+
+/* Медіа-запит для екранів менше 768px (планшети і мобільні) */
+@media (max-width: 768px) {
+  .gallery_item {
+    width: calc(50% - 16px);
+    /* Два елементи в ряд */
+  }
+}
+
+/* Медіа-запит для екранів менше 480px (мобільні телефони) */
+@media (max-width: 480px) {
+  .gallery_item {
+    width: 100%;
+    /* Один елемент в ряд */
+  }
+
+  .gallery_stats {
+    flex-direction: column;
+    /* Розміщення статистики в стовпчик */
+    align-items: center;
+    /* Центруємо статистику */
+  }
+
+  .gallery_stats p {
+    text-align: center;
+    /* Центруємо текст */
+  }
 }
 
 .simple-lightbox img {
